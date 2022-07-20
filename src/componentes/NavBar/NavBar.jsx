@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, AppBar, Toolbar, InputBase, Stack, styled, alpha, } from '@mui/material';
 import { Link, Outlet } from 'react-router-dom'
-import logo4 from '../imagenes/logo4.png';
+import group1 from '../imagenes/group1.png';
 import SearchIcon from '@mui/icons-material/Search';
 import CardTravelIcon from '@mui/icons-material/CardTravel';
 import PersonIcon from '@mui/icons-material/Person';
@@ -101,7 +101,7 @@ function NavBar({searcher}) {
           <Toolbar  sx={{ display: 'flex', justifyContent: 
   'space-around' }}>
             <Box  sx={{ display: 'flex', alignContent: 'center', alignItems: 'center'}}><Link to='/'> 
-            <img style={{height:'4rem', paddingBottom: '0.7rem', paddingTop: '0.5rem' }} src={logo4} alt='logo' /> </Link>
+            <img style={{height:'4rem', paddingBottom: '0.7rem', paddingTop: '0.5rem' }} src={group1} alt='logo' /> </Link>
             </Box>
   
             <Search>
