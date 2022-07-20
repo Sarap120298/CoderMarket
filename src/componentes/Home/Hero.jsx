@@ -22,10 +22,15 @@ const TextBox = styled(Box)(({ theme }) => ({
  
 backgroundColor: "rgba(221, 221, 221, 0.75)",
 color: "black",
-width: "32rem",
-padding: "5rem",
+width: "40vw",
+height:"20vh",
+padding: "3.2rem",
 margin: "5rem",
-fontSize: "1.5rem"
+fontSize: "1.5rem",
+display: "flex",
+flexDirection: "column",
+justifyContent: "space-around",
+alignItems: "space-around"
 
 
  
@@ -73,7 +78,7 @@ const Hero = () => {
     return (  
     <>
     
-    <HeroBox style={{width:'100%', marginTop:'4.6rem', height:'100vh'}}> 
+    <HeroBox style={{width:'100%', marginTop:'4.6rem', height:'90vh'}}> 
        <StyledBox>
         <TextBox>
        <StyledText>¿Buscas un desarrollador o desarrolladora para tu proyecto o empresa?</StyledText>
