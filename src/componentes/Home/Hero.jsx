@@ -20,13 +20,13 @@ const HeroBox = styled(Box)(({theme}) => ({
 
 const TextBox = styled(Box)(({ theme }) => ({
  
- backgroundColor: "rgba(221, 221, 221, 0.75)",
+backgroundColor: "rgba(221, 221, 221, 0.75)",
 color: "black",
 width: "32rem",
 padding: "5rem",
 margin: "5rem",
-fontSize: "1.5rem",
-fontWeight: "bolder"
+fontSize: "1.5rem"
+
 
  
 }));
@@ -42,19 +42,14 @@ const StyledBox = styled(Box)(({theme}) => ({
  
 }));
 
-
-const BoxText = styled(Box)(({ theme }) => ({
-  [theme.breakpoints.down('sm')]: {
-    marginTop: '4rem',
-    paddingBottom: '10rem',
-    justifyContent:'space-evenly',
-    flexWrap:'wrap'
-  },
-  [theme.breakpoints.up('sm')]: {
-    justifyContent:'center',
-  },
+const StyledText = styled(Typography)(({theme}) => ({
+ 
+  fontWeight: "bolder"
  
 }));
+
+
+
 
 const StyledButton = styled(Button)(({ theme }) => ({
     color: 'white',
@@ -81,9 +76,9 @@ const Hero = () => {
     <HeroBox style={{width:'100%', marginTop:'4.6rem', height:'100vh'}}> 
        <StyledBox>
         <TextBox>
-       <Typography>¿Buscas un desarrollador o desarrolladora para tu proyecto o empresa?</Typography>
-        <Typography>¡Estás en el lugar adecuado!</Typography>
-        <Typography>Encuentra el perfil que buscas en un click.</Typography>
+       <StyledText>¿Buscas un desarrollador o desarrolladora para tu proyecto o empresa?</StyledText>
+        <StyledText>¡Estás en el lugar adecuado!</StyledText>
+        <StyledText>Encuentra el perfil que buscas en un click.</StyledText>
        
        </TextBox>
         <Link to='/cartas'  style={{textDecoration: "none"}}> <StyledButton>
