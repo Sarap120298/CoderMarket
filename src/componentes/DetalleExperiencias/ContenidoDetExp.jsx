@@ -1,8 +1,8 @@
 import { Box, theme, styled } from "@mui/material";
-import data from '../experiencias.json'
 import ReadMore from "./ReadMore";
 import CajitaReserva from './CajitaReserva';
 import { useParams } from "react-router-dom";
+import db from '../../db.json';
 
 
 const ResponsiveBox = styled(Box)(({theme}) => ({
@@ -39,9 +39,9 @@ const ContenidoDetExp = ({ i }) => {
 
     return ( 
     <ResponsiveBox sx={{}}>
-        <StyledImg src={data[i].img} alt=""  />
+        <StyledImg src={db[i].img} alt=""  />
         <ReadMore >
-            {data[i].descripcion} 
+            {db[i].experiencia} 
         </ReadMore>
         <CajitaReserva i={i}/>
     </ResponsiveBox> 

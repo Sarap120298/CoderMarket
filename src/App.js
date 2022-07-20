@@ -19,7 +19,8 @@ import ComoFunciona from './componentes/Footer/ComoFunciona';
 import InfoEmpresa from './componentes/Footer/InfoEmpresa';
 import PagoSeguro from './componentes/Footer/PagoSeguro';
 import Contact from './componentes/Footer/Contacto';
-import Reserva from './componentes/Reserva/Reserva'
+import Reserva from './componentes/Reserva/Reserva';
+import db from './db.json'
 
 
 
@@ -28,25 +29,26 @@ function App() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get("https://econotravel-grupo3.herokuapp.com/experiencias")
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data);
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   axios
+  //     .get("https://econotravel-grupo3.herokuapp.com/experiencias")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setData(res.data);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
   const searchers = (e) => {
     setSearch(e.target.value);
     console.log(e.target.value);
   };
 
-  const filterCatalogo = data.filter((card) => {
-    return card.titulo.toLowerCase().includes(search.toLowerCase());
+  const filterCatalogo = db.coders.filter((card) => {
+    return card.tech.toLowerCase().includes(search.toLowerCase());
   });
+  console.log(db.coders)
   if (loading) return <section>Cargando...</section>;
 
   return (

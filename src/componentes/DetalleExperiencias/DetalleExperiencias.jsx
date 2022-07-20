@@ -6,7 +6,8 @@ import Breadcrums from "./Breadcrums";
 import ReadMore from "./ReadMore";
 import { useParams } from "react-router-dom";
 import DesplegableCantidad from './DesplegableCantidad';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import db from '../../db.json'
 
 
 
@@ -71,36 +72,41 @@ const ResponsiveBox = styled(Box)(({ theme }) => ({
 
 const DetalleExperiencias = () => {
     const {id} = useParams()
+
+   
   
   
-    const [data, setData] = useState([])
+    // const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     
-    useEffect(() => {
-      setLoading(true)
-      axios.get('https://econotravel-grupo3.herokuapp.com/experiencias')
-        .then(res => {
-          console.log(res.data)
-          setData(res.data);
-          setLoading(false)
-        })
-    }, [])
+    // useEffect(() => {
+    //   setLoading(true)
+    //   axios.get('https://econotravel-grupo3.herokuapp.com/experiencias')
+    //     .then(res => {
+    //       console.log(res.data)
+    //       setData(res.data);
+    //       setLoading(false)
+    //     })
+    // }, [])
+   
       
-    const findExperiencias = data.filter(experiencias => experiencias.titulo === id);
+    const findExperiencias = db.coders.filter(experiencias => experiencias.id ===  parseInt(id));
+
+    console.log(findExperiencias)
        
        if (loading) return <section>Cargando...</section>
     
     return ( 
         <>
-                {findExperiencias.map((exp, index) => (
+                {findExperiencias.map((cod, index) => (
         <Box key={index}
           sx={{ display: "flex", flexDirection: "column", alignItems: "center" }} >
-          <Breadcrums i={exp.etiquetas[0].ubicacion} i2={exp.etiquetas[1].transporte} i3={exp.etiquetas[2].duracion}/>
-          <StyledTitulo variant="h1">{ exp.titulo }</StyledTitulo>
+          {/* <Breadcrums i={exp.etiquetas[0].ubicacion} i2={exp.etiquetas[1].transporte} i3={exp.etiquetas[2].duracion}/> */}
+          <StyledTitulo variant="h1">{ cod.nombre }</StyledTitulo>
           <Box sx={{}}>
               <ResponsiveBox sx={{}}>
-                  <StyledImg src={exp.img} alt="" />
-                  <ReadMore>{exp.descripcion}</ReadMore>
+                  <StyledImg src={cod.img} alt="" />
+                  <ReadMore>{cod.apellido}</ReadMore>
                   <Box
                       sx={{ border: 2, fontWeight: "bold" }}
                       style={{
@@ -124,7 +130,7 @@ const DetalleExperiencias = () => {
                               marginTop: "1rem",
                           }}
                           variant="body1" >
-                          {exp.precio}€ por persona
+                          {cod.presentacion}€ por persona
                       </Typography>
                       <Box
                           sx={{
@@ -138,7 +144,7 @@ const DetalleExperiencias = () => {
                           </Typography>
                           <DesplegableCantidad />
                       </Box>
-                      <Link to={`/reserva/${exp.id}`} style={{textDecoration:'none'}} ><StyledButton variant="text" color="primary">
+                      <Link to={`/reserva/${cod.id}`} style={{textDecoration:'none'}} ><StyledButton variant="text" color="primary">
                           Reservar
                       </StyledButton></Link>
                   </Box>

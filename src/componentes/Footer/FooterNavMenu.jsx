@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 const StyledListItem = styled(ListItem)(({ theme }) => ({
-  height: '3rem',
+  height: 'rem',
   textAlign: 'center',
   display: 'flex',
   justifyContent: 'center',

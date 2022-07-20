@@ -4,6 +4,7 @@ import {Link, Outlet} from 'react-router-dom'
 import data from '../experiencias.json'
 import {Grid,Container, Box, Paper, styled,Card, CardMedia,CardContent, Stack, Item,Button, Typography, CardActions} from '@mui/material'
 import Filtro from "../Catalogo/Filtros/Filtro.jsx";
+import db from '../../db.json'
 
 
 const Item2 = styled(Paper)(({ theme }) => ({
@@ -25,24 +26,24 @@ const Item2 = styled(Paper)(({ theme }) => ({
 
 const ExpDestacadas = ({ id, id2, id3 }) => {
   
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
-  useEffect(() => {
-    setLoading(true)
-    axios.get('https://econotravel-grupo3.herokuapp.com/experiencias')
-      .then(res => {
-        console.log(res.data)
-        setData(res.data);
-        setLoading(false)
-      })
-  }, [])
+  // useEffect(() => {
+  //   setLoading(true)
+  //   axios.get('https://econotravel-grupo3.herokuapp.com/experiencias')
+  //     .then(res => {
+  //       console.log(res.data)
+  //       setData(res.data);
+  //       setLoading(false)
+  //     })
+  // }, [])
 
 
 
 
-    const exp1= data.filter(exp=> exp.id == id)
-    const exp2= data.filter(exp=> exp.id == id2)
-    const exp3= data.filter(exp=> exp.id == id3)
+    const exp1= db.filter(exp=> exp.id == id)
+    const exp2= db.filter(exp=> exp.id == id2)
+    const exp3= db.filter(exp=> exp.id == id3)
     const array = [...exp1, ...exp2, ...exp3]
   
     console.log(array)
@@ -65,7 +66,7 @@ const ExpDestacadas = ({ id, id2, id3 }) => {
                               alt="bici montaña"
                               image={exp.img} />
                    <CardContent>
-                  <Link to={`/destacadas/${exp.titulo}`} style={{textDecoration: "none"}}> <Typography variant="body1" style={{fontWeight:"bold", color:"#4B7F55", height:'48px' }}>{exp.titulo}</Typography> </Link>
+                  <Link to={`/destacadas/${exp.email}`} style={{textDecoration: "none"}}> <Typography variant="body1" style={{fontWeight:"bold", color:"#4B7F55", height:'48px' }}>{exp.nombre}</Typography> </Link>
 
                <Stack direction="row" spacing={1}>
                    <Item2>Chip One1</Item2>

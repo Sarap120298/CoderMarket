@@ -16,6 +16,7 @@ import logo1 from '../../componentes/imagenes/logo1.png';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import db from '../../db.json';
 
 
 
@@ -58,18 +59,18 @@ const Reserva = () => {
   const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     
-    useEffect(() => {
-      setLoading(true)
-      axios.get('https://econotravel-grupo3.herokuapp.com/experiencias')
-        .then(res => {
-          console.log(res.data)
-          setData(res.data);
-          setLoading(false)
-        })
-    }, [])
+    // useEffect(() => {
+    //   setLoading(true)
+    //   axios.get('https://econotravel-grupo3.herokuapp.com/experiencias')
+    //     .then(res => {
+    //       console.log(res.data)
+    //       setData(res.data);
+    //       setLoading(false)
+    //     })
+    // }, [])
       
-    console.log(data)
-    const test = data.filter(exper => exper.id == id);
+     console.log(db)
+    const test = db.coders.filter(exper => exper.id == parseInt(id));
     console.log(test)
        
        if (loading) return <section>Cargando...</section>
@@ -187,7 +188,7 @@ const Reserva = () => {
               <Box sx={{ border: 2, fontWeight: 'bold', marginRight:'12rem',  marginBottom:'12rem' }} style={{paddingLeft:'1rem',paddingRight:'1rem', textAlign:'center', borderColor:'#4b7f55',height: '80vh', width:'28rem',  marginLeft:'2rem', color:'#4b7f55', display:'flex', flexDirection:'column', justifyContent:'space-evenly', alignItems:'center' }}>
             <Typography  sx={{ fontWeight: 'bold', fontSize:'1.4rem',  marginTop:'1rem' }} variant="body1" >250€ </Typography>
             <Typography  sx={{ fontWeight: 'bold', fontSize:'1rem',  marginTop:'1rem' }} variant="body1" >Experiencia reservada: </Typography>
-            <Typography  sx={{ fontWeight: 'bold', fontSize:'1rem',  marginTop:'1rem' }} variant="body1" > {exp.titulo}</Typography>
+            <Typography  sx={{ fontWeight: 'bold', fontSize:'1rem',  marginTop:'1rem' }} variant="body1" > {exp.apellido}</Typography>
 
 
 
