@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# coderMarket
+![logo-coderMarket](./src/assets/img/******)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Tabla de Contenidos
+1. [Información General](#información-general)
+2. [Capturas de Pantalla](#capturas-de-pantalla)
+3. [Tecnologías](#tecnologías)
+4. [Instalación](#instalación)
+5. [Soporte](#soporte)
+6. [Hoja de ruta](#hoja-de-ruta)
+7. [Colaboración](#colaboración)
+8. [Autores](#autores)
+9. [FAQs](#faqs)
 
-In the project directory, you can run:
+***
+## Información General
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*Proyecto en proceso de desarrollo.*   
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+***
 
-### `npm test`
+## Capturas de pantalla
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![screenshot0****](/src/assets/img/****png)
+***
+![screenshot0****](/src/assets/img/****.png)
+***
+![screenshot0****](/src/assets/img/****.png)
 
-### `npm run build`
+***
+## Tecnologías
+Lista de tecnologías usadas en el desarrollo del proyecto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+***
+## Instalación
+Como instalar el repositorio:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Ingresar en Visual Studio Code
+2.  Clonar el proyecto con el comando: 
+ ``` 
+git clone https://github.com/carolineromero/libreriaApi
+```
+En Visual Studio Code:
+1. Instalar [React.js](https://es.reactjs.org/)
+2. Instalar [React-router-dom](https://reactrouter.com/).
 
-### `npm run eject`
+***
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Soporte
+Si tiene cualquier problema póngase en contacto con: 
+> emailEjemplo@gmail.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+***
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Hoja de ruta
 
-## Learn More
+En nuestra primera entrega presentamos una 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+***
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Colaboración
+El proyecto está abierto a cualquier persona que quiera aportar ideas o sugerencias. Podéis contactar con nosotros a través de:
 
-### Code Splitting
+> ejemploEmail@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+***
+## Autores 
+[Alejandra Piatti](https://github.com/alejapiatti)  
+[Carolina Romero](https://github.com/carolineromero)   
+[Celia Millán](https://github.com/CeliaMi)  
+[Eberth Isaac Castro](https://github.com/EberthCastro)  
+[Karla Valentina Rojas](https://github.com/KarlaV25)  
+[Sandra Martos](https://github.com/bysmartos)  
+[Sara Peromingo](https://github.com/Sarap120298)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+***
+## FAQs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Preguntas frecuentes:
+1. **¿Tengo problemas con React, no me deja ejecutar la página?**
+Mirar si está en el *explorador de archivos*, la carpeta *"node_modules"*. En caso de no estar, ir a la *terminal* y ejecutar el comando
+ ``` 
+npm i 
+```
 
-### Advanced Configuration
+2. **¿Tengo problemas poder ejecutar Json-server?**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ejecutar PowerShell en windows ( o terminal en IOS) como *administrador* y ejecutar el siguiente comando: 
+ ``` 
+Get-ExecutionPolicy -list 
+```
+y una vez cargada la lista, ejecutar el siguiente comando:
+ ``` 
+Set-ExecutionPolicy RemoteSigned -Force 
+```
