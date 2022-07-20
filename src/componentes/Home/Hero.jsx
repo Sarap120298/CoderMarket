@@ -1,50 +1,44 @@
 import { styled, Box, Typography, Button} from "@mui/material";
 import { Link } from 'react-router-dom'
 
-import test from '../imagenes/logo4.png'
-import ImageHero from "../imagenes/HeroImage2.png";
+import test from '../imagenes/logo.png'
+import ImageHero from "../imagenes/hero.png";
+
 
 
 const HeroBox = styled(Box)(({theme}) => ({
   display: 'flex',
-  justifyContent:'space-evenly'
-}));
-
-const BoxImg = styled('img')(({ theme }) => ({
- 
-  [theme.breakpoints.down('sm')]: {
-    display: 'none', 
-  },
- 
-}));
+  justifyContent:'space-evenly', 
+  backgroundImage:`url(${ImageHero})`,
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  position: "relative"
 
 
-const Typ1 = styled(Typography)(({theme}) => ({
-  [theme.breakpoints.down('sm')]: {
-    fontSize:'1rem',
-  },
-  [theme.breakpoints.up('sm')]: {
-    fontSize:'1.2rem',
-  },
+}));
+
+const TextBox = styled(Box)(({ theme }) => ({
+ 
+ backgroundColor: "rgba(221, 221, 221, 0.75)",
+color: "black",
+width: "32rem",
+padding: "5rem",
+margin: "5rem",
+fontSize: "1.5rem",
+fontWeight: "bolder"
+
  
 }));
-const Typ2 = styled(Typography)(({theme}) => ({
-  [theme.breakpoints.down('sm')]: {
-    fontSize:'2rem',
-  },
-  [theme.breakpoints.up('sm')]: {
-    fontSize:'3.6rem',
-  },
- 
-}));
-const Typ3 = styled(Typography)(({theme}) => ({
-  color:'#4b7f55',
-  [theme.breakpoints.down('sm')]: {
-    fontSize:'',
-  },
-  [theme.breakpoints.up('sm')]: {
-    fontSize:'0.9rem',
-  },
+
+
+const StyledBox = styled(Box)(({theme}) => ({
+  position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    color: "white",
+    textAlign: "center",
  
 }));
 
@@ -68,18 +62,15 @@ const StyledButton = styled(Button)(({ theme }) => ({
     // background: 'linear-gradient(to bottom,  #DE541E, #4b7f55)',
     top: '90%',
     
-    backgroundColor: '#DE541E',
+    backgroundColor: '#284885',
     '&:hover': {
-      backgroundColor: '#D4EAC8',
+      backgroundColor: '#D2DDF4',
       color:'black',
         },
-    '&:focus': {
-        backgroundColor: '#4B7F55',
-        color:'white',
-        },
-    width: '16rem',
+    width: '30rem',
     height: '2rem',
-    textTransform: 'none'
+    textTransform: 'none',
+    padding: "1.6rem"
   }));
 
 
@@ -88,27 +79,20 @@ const Hero = () => {
     <>
     
     <HeroBox style={{width:'100%', marginTop:'4.6rem', height:'100vh'}}> 
-        <BoxText style={{display:'flex',flexDirection:'column', textAlign:'center', marginBottom:'5.2rem'}}>
-          <Typ1 variant='h1' style={{color:'#DE541E', fontWeight:'bold', marginBottom:'1.4rem'}}>LOS MEJORES DESTINOS DE TODO EL MUNDO</Typ1>
-            <Box sx={{display:'flex', justifyContent:'center'}}>
-              <Typ2  variant='h2' style={{
-               color:'black', fontWeight:'bold'}}>Viaja, </Typ2> 
-              <Typ2  variant='h2' style={{color:'black', textShadow:'#DE541E 0.1rem 0.1rem 0.2rem',fontWeight:'bold'}}className="title-decore">disfruta</Typ2>
-            </Box>
-          <Typ2  variant='h2' style={{color:'black', fontWeight:'bold'}}>   y vive nuevas </Typ2>
-          <Typ2  variant='h2' style={{color:'black', fontWeight:'bold', marginBottom:'1.4rem'}}> experiencias</Typ2>
-          <Typ3  style={{}}> Escápate con tu pareja, tus amig@s o con la familia, </Typ3>
-          <Typ3  style={{color:'#4b7f55'}}>disfruta de un sin fin de experiencias que te esperan.</Typ3>
-          <Typ3  style={{color:'#4b7f55', marginBottom:'1.4rem'}}>¡Sonríe, están empezando tus vacaciones!</Typ3>
-          <Box style={{display:'flex',justifyContent:'center',}}>
-           <Link to='/cartas'  style={{textDecoration: "none"}}> <StyledButton>
-                  ¡DESCUBRE MÁS!
+       <StyledBox>
+        <TextBox>
+       <Typography>¿Buscas un desarrollador o desarrolladora para tu proyecto o empresa?</Typography>
+        <Typography>¡Estás en el lugar adecuado!</Typography>
+        <Typography>Encuentra el perfil que buscas en un click.</Typography>
+       
+       </TextBox>
+        <Link to='/cartas'  style={{textDecoration: "none"}}> <StyledButton>
+                  ¡DESCUBRA NUESTROS CODERS!
             </StyledButton></Link>
-          </Box>
-        </BoxText>
-        <Box  style={{display:'flex',flexDirection:'column',justifyContent:'center',  marginBottom:'5.2rem'}}>
+            </StyledBox>
+        {/* <Box  style={{display:'flex',flexDirection:'column',justifyContent:'center',  marginBottom:'5.2rem'}}>
             <BoxImg style={{height: '72vh', justifyItems: 'left'}} src={ImageHero} alt={"Foto of a girl"}/>
-        </Box>
+        </Box> */}
       
     </HeroBox>
     

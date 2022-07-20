@@ -5,7 +5,7 @@ let theme = createTheme({
    
     typography: {
         fontFamily: [
-          'Roboto Mono',
+          'Roboto',
         ].join(','),
       },
 
