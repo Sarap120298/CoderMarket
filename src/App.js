@@ -19,7 +19,7 @@ import ComoFunciona from './componentes/Footer/ComoFunciona';
 import InfoEmpresa from './componentes/Footer/InfoEmpresa';
 import PagoSeguro from './componentes/Footer/PagoSeguro';
 import Contact from './componentes/Footer/Contacto';
-import Reserva from './componentes/Reserva/Reserva';
+import ContactCoder from './componentes/ContactCoder/ContactCoder';
 import db from './db.json'
 
 
@@ -83,7 +83,7 @@ function App() {
             </Route>
             <Route path="/registro" element={<Registro />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/reserva/:id" element={<Reserva />}/>
+            <Route path="/ContactCoder/:id" element={<ContactCoder />}/>
           </Routes>
 
           {/* <DropdownUbicacion filterer={filterer}/>
