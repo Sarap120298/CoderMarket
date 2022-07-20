@@ -1,7 +1,6 @@
 import { Box, theme, styled } from "@mui/material";
 import ReadMore from "./ReadMore";
 import CajitaReserva from './CajitaReserva';
-import { useParams } from "react-router-dom";
 import db from '../../db.json';
 
 

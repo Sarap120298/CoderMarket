@@ -46,7 +46,8 @@ function App() {
   };
 
   const filterCatalogo = db.coders.filter((card) => {
-    return card.tech.toLowerCase().includes(search.toLowerCase());
+    
+    return Object.keys(card).some(k => card[k].toString().toLowerCase().includes(search.toLowerCase()));
   });
   console.log(db.coders)
   if (loading) return <section>Cargando...</section>;

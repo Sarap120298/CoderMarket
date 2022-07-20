@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Box, AppBar, Toolbar, InputBase, Stack, styled, alpha, } from '@mui/material';
 import { Link, Outlet } from 'react-router-dom'
-import logo4 from '../imagenes/logo4.png';
+import group1 from '../imagenes/group1.png';
 import SearchIcon from '@mui/icons-material/Search';
-import CardTravelIcon from '@mui/icons-material/CardTravel';
+import NotificationsActive from '@mui/icons-material/NotificationsActive';
 import PersonIcon from '@mui/icons-material/Person';
+import Favorite from '@mui/icons-material/Favorite';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -15,11 +16,11 @@ const Search = styled('div')(({ theme }) => ({
     width: '35vw',
   },
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.black, 0.15),
+  backgroundColor: alpha(theme.palette.common.black, 0.05),
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.black, 0.25),
   },
-  
+
   marginLeft: 0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
@@ -31,37 +32,51 @@ const StyledImgGor = styled('img')(({ theme }) => ({
   paddingBottom: '0.7rem',
   paddingTop: '0.5rem',
   [theme.breakpoints.down('sm')]: {
-    height:'2.2rem',  
+    height: '2.2rem',
   },
   [theme.breakpoints.up('sm')]: {
-    height:'4rem',  
+    height: '4rem',
   },
 
 }));
-const StyledIcon = styled(CardTravelIcon)(({ theme }) => ({
+const StyledIcon = styled(PersonIcon)(({ theme }) => ({
   marginBottom: '0.7rem',
   marginTop: '0.5rem',
-  color: '#4b7f55',
+  color: '#869CC9',
   [theme.breakpoints.down('sm')]: {
-    fontSize: 25,  
+    fontSize: 25,
   },
   [theme.breakpoints.up('sm')]: {
-    fontSize: 40,  
+    fontSize: 40,
   },
 
 }));
-const StyledIcon2 = styled(PersonIcon)(({ theme }) => ({
+
+const StyledIcon2 = styled(NotificationsActive)(({ theme }) => ({
   marginBottom: '0.7rem',
   marginTop: '0.5rem',
-  color: '#4b7f55',
+  color: '#869CC9',
   [theme.breakpoints.down('sm')]: {
-    fontSize: 25,  
+    fontSize: 25,
   },
   [theme.breakpoints.up('sm')]: {
-    fontSize: 40,  
+    fontSize: 40,
   },
 
 }));
+const StyledIcon3 = styled(Favorite)(({ theme }) => ({
+  marginBottom: '0.7rem',
+  marginTop: '0.5rem',
+  color: '#869CC9',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: 25,
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: 40,
+  },
+
+}));
+
 
 
 
@@ -73,10 +88,10 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color:'#4b7f55',
+  color: '#869CC9',
 }));
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: '#4b7f55',
+  color: '#869CC9',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -92,39 +107,39 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: '#fffafa',
 }));
 
-function NavBar({searcher}) {
-  
+function NavBar({ searcher }) {
 
-    return (
-      <Box sx={{ flexGrow: 1 }} >
-        <StyledAppBar position="fixed" elevation={0} >
-          <Toolbar  sx={{ display: 'flex', justifyContent: 
-  'space-around' }}>
-            <Box  sx={{ display: 'flex', alignContent: 'center', alignItems: 'center'}}><Link to='/'> 
-            <img style={{height:'4rem', paddingBottom: '0.7rem', paddingTop: '0.5rem' }} src={logo4} alt='logo' /> </Link>
-            </Box>
-  
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <Link to='/cartas' style={{textDecoration:'none'}}> 
+
+  return (
+    <Box sx={{ flexGrow: 1 }} >
+      <StyledAppBar position="fixed" elevation={0} >
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-around' }}>
+          <Box sx={{ display: 'flex', alignContent: 'center', alignItems: 'center' }}><Link to='/'>
+            <img style={{ height: '4rem', paddingBottom: '0.7rem', paddingTop: '0.5rem' }} src={group1} alt='logo' /> </Link>
+          </Box>
+
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <Link to='/cartas' style={{ textDecoration: 'none' }}>
               <StyledInputBase onChange={searcher}
-                placeholder="Buscar..."
+                placeholder=""
                 inputProps={{ 'aria-label': 'search' }}
-                /></Link>
-               
-            </Search>
-            <Stack direction="row" spacing={2} sx={{ display: 'flex', alignItems:'center' }}>
-              <Link to="/login">  <StyledIcon2 /> </Link>
-                <StyledIcon sx={{ }}/> 
-              </Stack>
-            
-         </Toolbar>
-        </StyledAppBar>
-        <Outlet/>
-      </Box>
-     
-    );
-  }
-  export default NavBar
+              /></Link>
+
+          </Search>
+          <Stack direction="row" spacing={2} sx={{ display: 'flex', alignItems: 'center' }}>
+            <Link to="/login"> <button><StyledIcon3 sx={{}} /> Mis Favoritos</button>  </Link>
+            <button><StyledIcon2 sx={{}} /> Mis Alertas</button>
+            <StyledIcon sx={{}} />
+          </Stack>
+
+        </Toolbar>
+      </StyledAppBar>
+      <Outlet />
+    </Box>
+
+  );
+}
+export default NavBar

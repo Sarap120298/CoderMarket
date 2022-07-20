@@ -19,14 +19,19 @@ const HeroBox = styled(Box)(({theme}) => ({
 }));
 
 const TextBox = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down('sm')]: {
+    width: "64vw",
+    height:"40vh",
+    padding: "0.6rem",
+   },
  
 backgroundColor: "rgba(221, 221, 221, 0.75)",
 color: "black",
-width: "40vw",
-height:"20vh",
+width: "60vw",
+height:"24vh",
 padding: "3.2rem",
 margin: "5rem",
-fontSize: "1.5rem",
+
 display: "flex",
 flexDirection: "column",
 justifyContent: "space-around",
@@ -48,8 +53,11 @@ const StyledBox = styled(Box)(({theme}) => ({
 }));
 
 const StyledText = styled(Typography)(({theme}) => ({
- 
-  fontWeight: "bolder"
+  [theme.breakpoints.down('sm')]: {
+     fontSize: "5vw"
+    },
+  fontWeight: "bolder",
+  fontSize: "1.8vw"
  
 }));
 
@@ -57,6 +65,10 @@ const StyledText = styled(Typography)(({theme}) => ({
 
 
 const StyledButton = styled(Button)(({ theme }) => ({
+  [theme.breakpoints.down('sm')]: {
+    width: '22rem',
+    height: '4rem',
+   },
     color: 'white',
     fontSize:'1.4rem',
     // background: 'linear-gradient(to bottom,  #DE541E, #4b7f55)',
