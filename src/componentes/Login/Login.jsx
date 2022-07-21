@@ -46,7 +46,7 @@ const userRole = [
 const Login = () => {
   const [role, setRole] = React.useState("");
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event) => {
     setRole(event.target.value);
   };
   return (

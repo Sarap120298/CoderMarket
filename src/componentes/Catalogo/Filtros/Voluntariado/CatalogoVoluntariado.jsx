@@ -30,7 +30,7 @@ function CatalogoVoluntariado() {
   const { vol } = useParams();
 
   const findVoluntariado = db.coders.filter(
-    (experiencias) => experiencias.voluntariado == vol
+    (coders) => coders.voluntariado == vol
   );
 
   return (
