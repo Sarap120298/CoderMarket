@@ -90,7 +90,11 @@ function App() {
       <DropdownTransporte />
       <DropdownDuracion/>  */}
           {/* <Filtro/> */}
+
+
           <Footer />
+
+
         </div>
       </BrowserRouter>
     </ThemeProvider>
