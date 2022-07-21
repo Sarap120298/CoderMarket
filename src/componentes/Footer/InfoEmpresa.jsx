@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Card, CardActionArea, CardContent, CardActions, Typography, CardMedia, Grid, Paper } from '@mui/material';
-import ImagenChica from '../imagenes/woman-g3c4e3a00a_1920.jpg';
+import ImagenChica from '../imagenes/quienessomosfoto.png';
 import {Outlet} from 'react-router-dom'
 import GifBike from '../imagenes/girlbike.gif';
 import {Link} from 'react-router-dom';
 
 const TitleTypography = styled(Typography)(({ theme }) => ({
-    backgroundColor:"#DE541E",
+    backgroundColor:"#284885",
     color: "#FFFAFA",
     fontSize: 24,
     textAlign: "center",
@@ -15,7 +15,7 @@ const TitleTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const SubTypography = styled(Typography)(({ theme }) => ({
-    color: "#DE541E",
+    color: "#284885",
     fontSize: 20,
     textAlign:"center",
 }));
@@ -33,7 +33,8 @@ const StyledTextCard = styled(Card)(({ theme }) => ({
     justify:"center",
     alignItem:"center",
     gap: "3vh",
-    padding:"5vh"
+    padding:"5vh",
+    boxShadow: "none"
 }));
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -45,7 +46,8 @@ const StyledCard = styled(Card)(({ theme }) => ({
     alignItem:"center",
     backgroundColor: "white",
     padding:"1vh",
-    paddingBottom: "9vh"
+    paddingBottom: "9vh",
+    boxShadow: "none"
 }));
 
 const StyledBox = styled(Box)(({ theme }) => ({ 
@@ -64,10 +66,10 @@ function InfoEmpresa() {
             <TitleTypography gutterBottom variant="caption" component="div">¿Quiénes somos?</TitleTypography>
             <Box sx={{width:"100vw", height:"13vw", display:"flex", flexDirection:"row", justifyContent:"center", gap:"3vh", marginTop:"2vh"}}>
                     <StyledTextCard>
-                        <SubTypography gutterBottom variant="caption" component="div">Misión</SubTypography>
-                        <Parrafo> Nuestra empresa se fundó a raíz de un viaje que nuestra fundadora, Marina Herrán, realizó en bicicleta por Cataluña en el verano de 2001.</Parrafo>
-                        <Parrafo>Durante ese periodo, descubrió que las opciones turísticas que ofrecían ciudades como Barcelona, Girona y Reus dependían de transportes contaminantes y actividades poco respetuosas con la naturaleza y el entorno, algo que causaba un progresivo deterioro de los increíbles parajes naturales de Cataluña. </Parrafo>
-                        <Parrafo> Preocupada por la falta de alternativas eco-friendly, Marina se propuso fundar una agencia de experiencias turísticas donde el respeto por la naturaleza fuera la principal prioridad. Así nació Econotravel Barcelona.</Parrafo>
+                        <SubTypography gutterBottom variant="caption" component="div">Sobre nosotros</SubTypography>
+                        <Parrafo> Somos una empresa dedicada a poner a disposicion de las empresas a los mejores desarrolladores</Parrafo>
+                        <Parrafo>Nuestra plataforma tiene la finalidad de facilitar la busqueda y filtrado de candidatos a las empresas segun el perfil deseado. Además, muchos de nuestros coders se ofrecen como voluntarios para participar de manera solidaria en proyectos que lo necesiten.</Parrafo>
+                        <Parrafo> ¡No te lo pierdas! </Parrafo>
                         <CardActions>
 
                         </CardActions>
@@ -81,7 +83,7 @@ function InfoEmpresa() {
                             />
                             <CardContent>
                                 <Typography variant="caption" component="div">
-                                    Marina Herrán, fundadora de Econotravel
+                                    
                                 </Typography>
                                 
                             </CardContent>
