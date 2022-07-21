@@ -15,22 +15,25 @@ const StyledBox = styled(Box)(({ theme }) => ({
     alignItems:"center",
     backgroundColor:"#FFFAFA",
     marginTop:"25vh",
-    gap:"2vh"
+    
 }));
 
 const TitleTypography = styled(Typography)(({ theme }) => ({
     width:"100vw",
-    backgroundColor: "#DE541E",
-    color: "#FFFAFA",
+    backgroundColor: "#D9D9D9",
+    color: "white",
     fontSize: 24,
     textAlign: "center",
-    padding: "2vh"
+    padding: "2vh",
+    fontWeight: "Bold",
 }));
 
 const SubTypography = styled(Typography)(({ theme }) => ({
-    color: "#DE541E",
+    color: "#284885",
     fontSize: 18,
     textAlign:"center",
+    fontWeight: "bolder",
+    
 }));
 
 const Parrafo = styled(Typography)(({ theme }) => ({
@@ -47,7 +50,8 @@ const StyledTextCard = styled(Card)(({ theme }) => ({
     alignItem:"center",
     gap: "4vh",
     padding:"3vh",
-    boxShadow:1
+    boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)",
+    borderRadius: "20px",
 }));
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -56,10 +60,11 @@ const StyledCard = styled(Card)(({ theme }) => ({
     display:"flex",
     flexDirection:"column",
     justifyContent:"center",
-    backgroundColor: "#DE541E",
+    backgroundColor: "#FFFAFA",
     alignItems:"center",
     gap: "5vh",
-    padding: "5vh"
+    padding: "5vh",
+    boxShadow:"none",
 }));
 
 
@@ -72,7 +77,9 @@ function PagoSeguro() {
             <StyledCard>
             <Typography>
             Los medios de pago aceptados serán: </Typography>
-            <Grid container spacing={1}>
+
+            <Box styled={{display:"flex", justifyContent:"center"}}>
+            <Grid container spacing={24}>
                 <Grid item xs={4}>
                     <StyledTextCard>
                     <CardMedia
@@ -88,23 +95,6 @@ function PagoSeguro() {
                     </StyledTextCard>
                 </Grid>
 
-                <Grid item xs={4}>
-                <StyledTextCard>
-                    <CardMedia
-                                component="img"
-                                height="100"
-                                width="50"
-                                justify="center"
-                                image={TransferIcon} sx={{width:150}}
-                                alt="transferencia bancaria"
-                        />
-                        <SubTypography>Transferencia bancaria</SubTypography>
-                        <Parrafo> Puedes hacer un ingreso por el valor del importe total de la compra directamente en nuestra cuenta bancaria. </Parrafo>
-                        <Parrafo> Hay que tener en cuenta que los plazos de las transferencias varían según el banco y puede tardar entre 2-3 días laborales.</Parrafo>
-                        <Parrafo>Número de cuenta : ESXX-XXXX-XXXX-XX-XXXXXXXXXX</Parrafo>
-
-                    </StyledTextCard>
-                </Grid>
 
                 <Grid item xs={4}>
                 <StyledTextCard>
@@ -123,6 +113,7 @@ function PagoSeguro() {
                 </Grid>
 
             </Grid>
+            </Box>
             </StyledCard>
             </StyledBox>
             <Outlet/>

@@ -1,5 +1,5 @@
-# coderMarket
-![logo-coderMarket](./src/assets/img/******)
+#### coderMarket
+![logo-coderMarket](./src/componentes/imagenes/logo.png)
 
 
 ## Tabla de Contenidos
