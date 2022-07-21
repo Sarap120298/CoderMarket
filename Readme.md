@@ -4,8 +4,7 @@
 
 ## Tabla de Contenidos
 1. [Información General](#información-general)
-2. [Capturas de Pantalla](#capturas-de-pantalla)
-3. [Tecnologías](#tecnologías)
+2. [Capturas de Pantalla](#capturas-de-pantall
 4. [Instalación](#instalación)
 5. [Soporte](#soporte)
 6. [Hoja de ruta](#hoja-de-ruta)
