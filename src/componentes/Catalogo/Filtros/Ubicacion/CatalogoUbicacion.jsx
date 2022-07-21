@@ -5,6 +5,7 @@ import { Card, CardActions,Box, CardContent, CardMedia, Grid, Paper, Stack, Cont
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Filtro from '../Filtro';
+import db from '../../../../db.json'
 
 
 
@@ -33,18 +34,18 @@ function CatalogoUbicacion() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false);
   
-  useEffect(() => {
-    setLoading(true)
-    axios.get('https://econotravel-grupo3.herokuapp.com/experiencias')
-      .then(res => {
-        console.log(res.data)
-        setData(res.data);
-        setLoading(false)
-      })
-  }, [])
+  // useEffect(() => {
+  //   setLoading(true)
+  //   axios.get('https://econotravel-grupo3.herokuapp.com/experiencias')
+  //     .then(res => {
+  //       console.log(res.data)
+  //       setData(res.data);
+  //       setLoading(false)
+  //     })
+  // }, [])
     console.log(data)
 
-  const findUbicaciones = data.filter(experiencias => experiencias.etiquetas[0].ubicacion == ubi);
+  const findUbicaciones = db.coders.filter(experiencias => experiencias.voluntariado == ubi);
   console.log(findUbicaciones)
   if (loading) return <section>Cargando...</section>;
 
@@ -55,33 +56,35 @@ function CatalogoUbicacion() {
      
                    
             <Grid container spacing={10}>
-               {findUbicaciones.map((exp, index) => (
+               {findUbicaciones.map((cod, index) => (
                  <Grid key={index} item xs={12} sm={6} md={4}>
-                  <Card  sx={{ maxWidth: 330}} style={{height:"35rem"}} >
-                    <CardMedia
-                              component="img"
-                               height="370"
-                               alt="bici montaña"
-                              image={exp.img} />
-                     <CardContent>
-                     <Link to={`/cartas/${exp.titulo}`} style={{textDecoration: "none"}}>   <Typography variant="body1" style={{fontWeight:"bold", color:"#4B7F55" }}>  {exp.titulo} </Typography> </Link> 
-               <Stack direction="row" spacing={1}>
-                   <Item>Chip One</Item>
-                    <Item>Chip One</Item>
-                    <Item>Chip One</Item>
-                  </Stack>
-                <CardActions style={{justifyContent:"space-between"}} >
-                  <Typography style={{fontSize:"0.8rem", color:"#4B7F55", fontWeight:"bold"}} >{exp.etiquetas[0].ubicacion}
-                  <Typography style={{fontSize:"0.7rem", color:"#2F2F2F"}} >
-                  {exp.precio}€ Por persona
-                    </Typography>
+                 <Link to={`/cartas/${cod.id}`} style={{textDecoration: "none"}}>  <Card  sx={{ maxWidth: 330}} style={{height:"34rem"}} >
+                  <CardMedia
+                            component="img"
+                             height="370"
+                            image={cod.img} />
+                   <CardContent>
+                    <Typography variant="body1" style={{fontWeight:"bold", color:"#284885" }}>  {cod.nombre} {cod.apellido} </Typography> 
+             <Stack direction="row" spacing={1}>
+                 {/* <Item>Chip One</Item>
+                  <Item>Chip One</Item>
+                  <Item>Chip One</Item> */}
+                </Stack>
+              <CardActions style={{justifyContent:"space-between"}} >
+                <Typography style={{fontSize:"0.9rem", color:"#284885", fontWeight:"bold"}} >{cod.ubicacion}
+                <Typography style={{fontSize:"0.8rem", color:"#2F2F2F", paddingBottom: '0.6rem', paddingTop: '0.6rem'}} >
+                {cod.experiencia} de experiencia.
                   </Typography>
-                <Button style={{fontSize:"0.6rem", color:"#2F2F2F", fontWeight:"bold"}}>Reserva ahora</Button>
-                   </CardActions>
-                  </CardContent>
-                 
-                       </Card>
-                 </Grid>
+                  <Typography style={{fontSize:"0.8rem", color:"#2F2F2F"}} >
+                {cod.tech}
+                  </Typography>
+                </Typography>
+             <Link to={`/ContactCoder/${cod.id}`} style={{textDecoration: "none"}}> <Button style={{fontSize:"0.6rem", color:"#2F2F2F", fontWeight:"bold"}}>Contacta ahora</Button></Link>
+                 </CardActions>
+                </CardContent>
+               
+                     </Card> </Link> 
+               </Grid> 
                  ))}
            </Grid>
              </StyledContainer>

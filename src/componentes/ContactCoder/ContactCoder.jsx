@@ -53,7 +53,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
     textTransform: 'none'
   }));
 
-const Reserva = () => {
+const ContactCoder = () => {
   const {id} = useParams();
 
   const [data, setData] = useState([])
@@ -219,4 +219,4 @@ const Reserva = () => {
     </>
   );
 };
-export default Reserva;
+export default ContactCoder;

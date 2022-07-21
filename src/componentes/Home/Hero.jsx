@@ -18,14 +18,23 @@ const HeroBox = styled(Box)(({ theme }) => ({
 }));
 
 const TextBox = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down('sm')]: {
+    width: "64vw",
+    height:"40vh",
+    padding: "0.6rem",
+   },
+ 
+backgroundColor: "rgba(221, 221, 221, 0.75)",
+color: "black",
+width: "60vw",
+height:"24vh",
+padding: "3.2rem",
+margin: "5rem",
 
-  backgroundColor: "rgba(221, 221, 221, 0.75)",
-  color: "black",
-  width: "32rem",
-  padding: "5rem",
-  margin: "5rem",
-  fontSize: "1.5rem"
-
+display: "flex",
+flexDirection: "column",
+justifyContent: "space-around",
+alignItems: "space-around"
 
 
 }));
@@ -41,49 +50,56 @@ const StyledBox = styled(Box)(({ theme }) => ({
 
 }));
 
-const StyledText = styled(Typography)(({ theme }) => ({
-
-  fontWeight: "bolder"
-
+const StyledText = styled(Typography)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+     fontSize: "5vw"
+    },
+  fontWeight: "bolder",
+  fontSize: "1.8vw"
+ 
 }));
 
 
 
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  color: 'white',
-  fontSize: '1.4rem',
-  // background: 'linear-gradient(to bottom,  #DE541E, #4b7f55)',
-  top: '90%',
-
-  backgroundColor: '#284885',
-  '&:hover': {
-    backgroundColor: '#D2DDF4',
-    color: 'black',
-  },
-  width: '30rem',
-  height: '2rem',
-  textTransform: 'none',
-  padding: "1.6rem"
-}));
+  [theme.breakpoints.down('sm')]: {
+    width: '22rem',
+    height: '4rem',
+   },
+    color: 'white',
+    fontSize:'1.4rem',
+    // background: 'linear-gradient(to bottom,  #DE541E, #4b7f55)',
+    top: '90%',
+    
+    backgroundColor: '#284885',
+    '&:hover': {
+      backgroundColor: '#D2DDF4',
+      color:'black',
+        },
+    width: '30rem',
+    height: '2rem',
+    textTransform: 'none',
+    padding: "1.6rem"
+  }));
 
 
 const Hero = () => {
   return (
     <>
-
-      <HeroBox style={{ width: '100%', marginTop: '4.6rem', height: '100vh' }}>
-        <StyledBox>
-          <TextBox>
-            <StyledText>¿Buscas un desarrollador o desarrolladora para tu proyecto o empresa?</StyledText>
-            <StyledText>¡Estás en el lugar adecuado!</StyledText>
-            <StyledText>Encuentra el perfil que buscas en un click.</StyledText>
-
-          </TextBox>
-          <Link to='/cartas' style={{ textDecoration: "none" }}> <StyledButton>
-            ¡DESCUBRA NUESTROS CODERS!
-          </StyledButton></Link>
-        </StyledBox>
+    
+    <HeroBox style={{width:'100%', marginTop:'4.6rem', height:'90vh'}}> 
+       <StyledBox>
+        <TextBox>
+       <StyledText>¿Buscas un desarrollador o desarrolladora para tu proyecto o empresa?</StyledText>
+        <StyledText>¡Estás en el lugar adecuado!</StyledText>
+        <StyledText>Encuentra el perfil que buscas en un click.</StyledText>
+       
+       </TextBox>
+        <Link to='/cartas'  style={{textDecoration: "none"}}> <StyledButton>
+                  ¡DESCUBRA NUESTROS CODERS!
+            </StyledButton></Link>
+            </StyledBox>
         {/* <Box  style={{display:'flex',flexDirection:'column',justifyContent:'center',  marginBottom:'5.2rem'}}>
             <BoxImg style={{height: '72vh', justifyItems: 'left'}} src={ImageHero} alt={"Foto of a girl"}/>
         </Box> */}

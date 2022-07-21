@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, AppBar, Toolbar, InputBase, Stack, styled, alpha, } from '@mui/material';
+import { Box, AppBar, Toolbar, InputBase, Stack, styled, alpha, Typography, Button } from '@mui/material';
 import { Link, Outlet } from 'react-router-dom'
 import group1 from '../imagenes/group1.png';
 import SearchIcon from '@mui/icons-material/Search';
@@ -28,17 +28,6 @@ const Search = styled('div')(({ theme }) => ({
   },
 }));
 
-const StyledImgGor = styled('img')(({ theme }) => ({
-  paddingBottom: '0.7rem',
-  paddingTop: '0.5rem',
-  [theme.breakpoints.down('sm')]: {
-    height: '2.2rem',
-  },
-  [theme.breakpoints.up('sm')]: {
-    height: '4rem',
-  },
-
-}));
 const StyledIcon = styled(PersonIcon)(({ theme }) => ({
   marginBottom: '0.7rem',
   marginTop: '0.5rem',
@@ -55,25 +44,33 @@ const StyledIcon = styled(PersonIcon)(({ theme }) => ({
 const StyledIcon2 = styled(NotificationsActive)(({ theme }) => ({
   marginBottom: '0.7rem',
   marginTop: '0.5rem',
+  marginRight: '0.5rem',
   color: '#869CC9',
   [theme.breakpoints.down('sm')]: {
     fontSize: 25,
   },
   [theme.breakpoints.up('sm')]: {
-    fontSize: 40,
+    fontSize: 24,
   },
 
 }));
 const StyledIcon3 = styled(Favorite)(({ theme }) => ({
   marginBottom: '0.7rem',
   marginTop: '0.5rem',
+  marginRight: '0.5rem',
   color: '#869CC9',
   [theme.breakpoints.down('sm')]: {
     fontSize: 25,
   },
   [theme.breakpoints.up('sm')]: {
-    fontSize: 40,
+    fontSize: 24,
   },
+
+}));
+
+const TextIconButtons = styled(Typography)(({ theme }) => ({
+  fontSize: '1rem',
+  color: 'black'
 
 }));
 
@@ -130,9 +127,9 @@ function NavBar({ searcher }) {
 
           </Search>
           <Stack direction="row" spacing={2} sx={{ display: 'flex', alignItems: 'center' }}>
-            <Link to="/login"> <button><StyledIcon3 sx={{}} /> Mis Favoritos</button>  </Link>
-            <button><StyledIcon2 sx={{}} /> Mis Alertas</button>
-            <StyledIcon sx={{}} />
+             <Button><StyledIcon3 sx={{}} /><TextIconButtons> Mis Favoritos</TextIconButtons></Button>  
+            <Button><StyledIcon2 sx={{}} /> <TextIconButtons>Mis Alertas </TextIconButtons> </Button>
+            <Link to="/login"> <StyledIcon sx={{}} /></Link>
           </Stack>
 
         </Toolbar>

@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from '@mui/material/styles'
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox,  Grid, Box, Typography, Container } from "@mui/material";
 import LockOpenRoundedIcon from '@mui/icons-material/LockOpenRounded';
-import logo1 from '../../componentes/imagenes/logo1.png'
+import group1 from '../../componentes/imagenes/logo.png'
 import { Link } from 'react-router-dom';
 
 
@@ -21,12 +21,10 @@ const StyledBox = styled(Box)(({ theme }) => ({
 const Login = () => {
   return (
     <>
-      <StyledBox  sx={{ display:"flex", justifycontent:"flex-start", margin: '8rem' }}>
-        <Box sx={{ marginRight: "auto" }}>
-          <Link to="/">
-            <img src={logo1} alt="logo" sx={{ width: 100, height: 100 }} />
-          </Link>
-        </Box>
+
+        <Box sx={{  }}><Link to='/'>
+            <img style={{ height: '4rem', marginLeft: '1.2rem', marginTop: '1.4rem' }} src={group1} alt='logo' /> </Link>
+          </Box>
       
       <Container component="main" maxWidth="xs"  sx={{marginRight:"auto"}}>
         <CssBaseline />
@@ -99,7 +97,7 @@ const Login = () => {
           </Box>
         </Box>
               </Container>
-              </StyledBox>
+          
     </>
   );
 };

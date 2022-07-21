@@ -48,7 +48,7 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
       <>
         <List sx={{ display:'flex', justifyContent:'space-evenly',paddingBottom: '0.6rem',paddingTop: '0.6rem', width: '100vw'}}>
           <StyledListItem sx={{  marginRight:'1rem'}}>
-            <Link to='/ComoFunciona' style={{textDecoration:'none'}} ><StyledLink  variant="body1" >¿Cómo reservar?</StyledLink></Link>
+            <Link to='/ComoFunciona' style={{textDecoration:'none'}} ><StyledLink  variant="body1" >¿Cómo Funciona?</StyledLink></Link>
           </StyledListItem>
   
           <StyledListItem  sx={{  marginRight:'1rem'}}>
