@@ -50,6 +50,7 @@ const StyledTextCard = styled(Card)(({ theme }) => ({
     alignItem:"center",
     gap: "4vh",
     padding:"3vh",
+    marginRight: '6rem',
     boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)",
     borderRadius: "20px",
 }));
@@ -78,8 +79,8 @@ function PagoSeguro() {
             <Typography>
             Los medios de pago aceptados serán: </Typography>
 
-            <Box styled={{display:"flex", justifyContent:"center"}}>
-            <Grid container spacing={24}>
+            <Box style={{maginTop: '4rem'}} >
+            <Grid style={{display: 'flex', justifyContent: 'space-around'}} >
                 <Grid item xs={4}>
                     <StyledTextCard>
                     <CardMedia

@@ -31,7 +31,7 @@ function Catalogo({ data }) {
   return (
         <>
       < Filtro/>
-      <StyledContainer style={{paddingTop:'14rem'}}>
+      <StyledContainer style={{paddingTop:'8rem'}}>
      
                    
             <Grid container spacing={10}>

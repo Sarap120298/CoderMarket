@@ -103,7 +103,7 @@ const DetalleExperiencias = () => {
     return ( 
         <>
                 {findExperiencias.map((cod, index) => (
-        <Box key={index}
+        <Box key={index} style={{height: '96vh'}}
           sx={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop:"10rem"}} >
           {/* <Breadcrums i={exp.etiquetas[0].ubicacion} i2={exp.etiquetas[1].transporte} i3={exp.etiquetas[2].duracion}/> */}
           {/* <StyledTitulo variant="h5">{ cod.nombre }</StyledTitulo> */}
