@@ -50,7 +50,7 @@ function Catalogo({ data }) {
                     <Item>Chip One</Item> */}
                   </Stack>
                 <CardActions style={{justifyContent:"space-between"}} >
-                  <Typography style={{fontSize:"0.9rem", color:"#284885", fontWeight:"bold"}} >{cod.ubicacion}
+                  <Typography style={{fontSize:"0.9rem", color:"black", fontWeight:"bold"}} >{cod.ubicacion}
                   <Typography style={{fontSize:"0.8rem", color:"#2F2F2F", paddingBottom: '0.6rem', paddingTop: '0.6rem'}} >
                   {cod.experiencia} de experiencia.
                     </Typography>
@@ -58,7 +58,7 @@ function Catalogo({ data }) {
                   {cod.tech}
                     </Typography>
                   </Typography>
-               <Link to={`/ContactCoder/${cod.id}`} style={{textDecoration: "none"}}> <Button style={{fontSize:"0.6rem", color:"#2F2F2F", fontWeight:"bold"}}>Contacta ahora</Button></Link>
+               <Link to={`/ContactCoder/${cod.id}`} style={{textDecoration: "none"}}> <Button style={{fontSize:"0.6rem", color:"white", backgroundColor:"#284885", fontWeight:"bold"}}>Contactar</Button></Link>
                    </CardActions>
                   </CardContent>
                  

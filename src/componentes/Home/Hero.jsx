@@ -1,15 +1,14 @@
-import { styled, Box, Typography, Button} from "@mui/material";
+import { styled, Box, Typography, Button } from "@mui/material";
 import { Link } from 'react-router-dom'
 
-import test from '../imagenes/logo.png'
+import test from '../imagenes/logo4.png';
 import ImageHero from "../imagenes/hero.png";
 
 
-
-const HeroBox = styled(Box)(({theme}) => ({
+const HeroBox = styled(Box)(({ theme }) => ({
   display: 'flex',
-  justifyContent:'space-evenly', 
-  backgroundImage:`url(${ImageHero})`,
+  justifyContent: 'space-evenly',
+  backgroundImage: `url(${ImageHero})`,
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
@@ -38,18 +37,17 @@ justifyContent: "space-around",
 alignItems: "space-around"
 
 
- 
 }));
 
 
-const StyledBox = styled(Box)(({theme}) => ({
+const StyledBox = styled(Box)(({ theme }) => ({
   position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    color: "white",
-    textAlign: "center",
- 
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  color: "white",
+  textAlign: "center",
+
 }));
 
 const StyledText = styled(Typography)(({theme}) => ({
@@ -87,7 +85,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 
 const Hero = () => {
-    return (  
+  return (
     <>
     
     <HeroBox style={{width:'100%', marginTop:'4.6rem', height:'90vh'}}> 
@@ -105,12 +103,12 @@ const Hero = () => {
         {/* <Box  style={{display:'flex',flexDirection:'column',justifyContent:'center',  marginBottom:'5.2rem'}}>
             <BoxImg style={{height: '72vh', justifyItems: 'left'}} src={ImageHero} alt={"Foto of a girl"}/>
         </Box> */}
-      
-    </HeroBox>
-    
-     
-    
-    </> );
+
+      </HeroBox>
+
+
+
+    </>);
 }
- 
+
 export default Hero;

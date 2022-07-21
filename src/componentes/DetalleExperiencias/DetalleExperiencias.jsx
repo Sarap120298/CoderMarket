@@ -14,10 +14,10 @@ import db from '../../db.json'
 
 const StyledTitulo = styled(Typography)(({theme}) => ({
    
-    fontSize:'1.8rem',
-    color:'#4B7F55',
+    fontSize:'2.8rem',
+    color:'#2F2F2F',
     fontWeight: 'bold',
-    marginTop:'3rem',
+    
     [theme.breakpoints.down('sm')]: {
          
     },
@@ -25,7 +25,7 @@ const StyledTitulo = styled(Typography)(({theme}) => ({
         marginBottom:'2rem',   
     },
      [theme.breakpoints.up('xl')]: {
-        marginBottom:'4rem',
+        marginBottom:'1rem',
     },
     
 }));
@@ -36,33 +36,37 @@ const ResponsiveBox = styled(Box)(({ theme }) => ({
     },
   
     [theme.breakpoints.up("sm")]: {
-      justifyContent: "space-evenly",
+      justifyContent: "center",
       width: "100vw",
     },
   }));
   
   const StyledImg = styled("img")(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
-    height: "42vh",
+    height: "32vh",
   },
+  borderRadius: "5%",
+  width: "18rem",
   [theme.breakpoints.up("sm")]: {
-    height: "36vh",
+    height: "26vh",
   },
   [theme.breakpoints.up("xl")]: {
-    height: "42vh",
+    height: "38vh",
   },
   }));
    const StyledButton = styled(Button)(({ theme }) => ({
     color: 'white',
     fontSize:'1.4rem',
-    backgroundColor: '#DE541E',
+    borderRadius: "15px",
+    marginTop: "2rem",
+    backgroundColor: '#285585',
     '&:hover': {
-      backgroundColor: '#D4EAC8',
+      backgroundColor: '#B9BFBF',
         },
     '&:focus': {
-        backgroundColor: '#4B7F55',
+        backgroundColor: '#B9BFBF',
         },
-    width: '10rem',
+    width: '17rem',
     textTransform: 'none'
   }));
 
@@ -93,60 +97,96 @@ const DetalleExperiencias = () => {
     const findExperiencias = db.coders.filter(experiencias => experiencias.id ===  parseInt(id));
 
     console.log(findExperiencias)
-       
-       if (loading) return <section>Cargando...</section>
+    
+      if (loading) return <section>Cargando...</section>
     
     return ( 
         <>
                 {findExperiencias.map((cod, index) => (
         <Box key={index}
-          sx={{ display: "flex", flexDirection: "column", alignItems: "center" }} >
+          sx={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop:"10rem"}} >
           {/* <Breadcrums i={exp.etiquetas[0].ubicacion} i2={exp.etiquetas[1].transporte} i3={exp.etiquetas[2].duracion}/> */}
-          <StyledTitulo variant="h1">{ cod.nombre }</StyledTitulo>
+          {/* <StyledTitulo variant="h5">{ cod.nombre }</StyledTitulo> */}
           <Box sx={{}}>
               <ResponsiveBox sx={{}}>
-                  <StyledImg src={cod.img} alt="" />
-                  <ReadMore>{cod.apellido}</ReadMore>
+                  
                   <Box
-                      sx={{ border: 2, fontWeight: "bold" }}
+                      sx={{ border: 30, fontWeight: "bold" }}
                       style={{
                           paddingLeft: "1rem",
                           paddingRight: "1rem",
-                          textAlign: "center",
-                          borderColor: "#4b7f55",
-                          height: "42vh",
-                          width: "18rem",
-                          marginLeft: "2rem",
-                          color: "#4b7f55",
+                          
+                          borderColor: "#F6F6F6",
+                          background: "#F6F6F6",
+                          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                          borderRadius: "20px",
+                          height: "50vh",
+                          width: "60rem",                          
+                          color: "#2F2F2F",
                           display: "flex",
-                          flexDirection: "column",
+                          flexDirection: "row",
                           justifyContent: "space-evenly",
                           alignItems: "center",
                       }} >
-                      <Typography
-                          sx={{
-                              fontWeight: "bold",
-                              fontSize: "1.4rem",
-                              marginTop: "1rem",
-                          }}
-                          variant="body1" >
-                          {cod.presentacion}€ por persona
-                      </Typography>
+
+                      <Box>
+                        <StyledImg src={cod.img} alt="" />
+                      </Box>                      
+
+
                       <Box
+                      
                           sx={{
                               display: "flex",
+                              flexDirection: "column",
+                              alignItems: "left",
+                              alignContent: "left",
+                              justifyContent: "left",
+                              
+                          }} > 
+
+
+                          <StyledTitulo variant="h5">{ cod.nombre }  {cod.apellido }</StyledTitulo>                  
+                            
+
+                            <Typography
+                      
+                          sx={{
+                              fontWeight: "bold",
+                              fontSize: "1.1rem",
+                              marginTop: "1rem",
+                              width: "30rem",
+                              display: "flex",
+                              flexDirection: "column",
+
+                          }}
+                          variant="body1" >{cod.presentacion}                  
+
+                          <Box
+                      
+                          sx={{
+                              display: "flex",
+                              flexDirection: "column",
                               alignItems: "center",
+                              alignContent: "center",
                               justifyContent: "center",
-                          }} >
-                          <Typography sx={{ fontSize: "1.2rem" }} 
-                              variant="body1">
-                              Cantidad:
-                          </Typography>
-                          <DesplegableCantidad />
+                              width: "30rem",
+                              
+                          }} > 
+
+                          <Link to={`/ContactCoder/${cod.id}`} style={{textDecoration:'none'}} ><StyledButton variant="text" color="primary">
+                          Contacta Conmigo
+                          </StyledButton></Link>
+                          </Box>
+
+                      </Typography>
+
                       </Box>
-                      <Link to={`/reserva/${cod.id}`} style={{textDecoration:'none'}} ><StyledButton variant="text" color="primary">
-                          Reservar
-                      </StyledButton></Link>
+                              
+
+                      
+
+                      
                   </Box>
               </ResponsiveBox>
           </Box>
