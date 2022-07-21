@@ -1,23 +1,21 @@
-import React, { useState, useEffect} from 'react';
-import axios from "axios";
-import { Box, Typography } from '@mui/material';
-import DropdownUbicacion from './Ubicacion/DropdownUbicacion';
-import DropdownTransporte from './Transporte/DropdownTransporte';
-import DropdownDuracion from './Duracion/DropdownDuracion';
-import Catalogo from '../Catalogo'
+import React from "react";
+
+import { Box } from "@mui/material";
+import DropdownVoluntariado from "./Voluntariado/DropdownVoluntariado";
 
 function Filtro() {
-
-
   return (
     <>
-      <Box style={{marginTop:'10rem', display:'flex', justifyContent:'center'}}>
-        <DropdownUbicacion />
-        {/* <DropdownTransporte />
-        <DropdownDuracion/>  */}
+      <Box
+        style={{
+          marginTop: "10rem",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <DropdownVoluntariado />
       </Box>
-  
     </>
-  )
+  );
 }
-export default Filtro
+export default Filtro;

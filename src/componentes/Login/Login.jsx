@@ -17,7 +17,7 @@ import LockOpenRoundedIcon from "@mui/icons-material/LockOpenRounded";
 import group1 from "../../componentes/imagenes/logo.png";
 import { Link } from "react-router-dom";
 
-
+const handleSubmit = (event) => {};
 const TextfieldColor = styled(TextField)(({ theme }) => ({
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
@@ -43,8 +43,12 @@ const userRole = [
   },
 ];
 
-const Registro = () => {
- 
+const Login = () => {
+  const [role, setRole] = React.useState("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRole(event.target.value);
+  };
   return (
     <>
       <Box style={{ height: "96vh" }}>
@@ -80,11 +84,11 @@ const Registro = () => {
                 <LockOpenRoundedIcon />
               </Avatar>
               <Typography component="h1" variant="h5">
-                Register
+                Log in
               </Typography>
               <Box
                 component="form"
-  
+                onSubmit={handleSubmit}
                 noValidate
                 sx={{ mt: 1 }}
                 style={{
@@ -119,7 +123,7 @@ const Registro = () => {
                   id="outlined-select-currency"
                   select
                   label="Select"
-                  
+                  onChange={handleChange}
                   helperText="¿Eres coder o empresa? "
                 >
                   {userRole.map((option) => (
@@ -142,17 +146,17 @@ const Registro = () => {
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
                 >
-                  Register
+                  Log in
                 </Button>
                 <Grid container>
                   <Grid item xs sx={{ display: "flex", alignItems: "center" }}>
                     <Link
-                      to="/login"
+                      to="/registro"
                       href="#"
                       variant="body2"
                       style={{ color: "#284885" }}
                     >
-                      Haz clic aqui si ya te has registrado
+                      Haz clic aqui si todavia no te has registrado
                     </Link>
                   </Grid>
                 </Grid>
@@ -164,4 +168,4 @@ const Registro = () => {
     </>
   );
 };
-export default Registro;
+export default Login;
