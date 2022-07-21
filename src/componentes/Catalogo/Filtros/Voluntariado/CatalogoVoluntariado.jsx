@@ -12,7 +12,9 @@ import {
   Button,
   Typography,
 } from "@mui/material";
-import Filtro from "./Filtros/Filtro";
+import { useParams } from "react-router-dom";
+import Filtro from "../Filtro";
+import db from "../../../../db.json";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(6),
@@ -24,13 +26,19 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   justifyContent: "space-around",
 }));
 
-function Catalogo({ data }) {
+function CatalogoVoluntariado() {
+  const { vol } = useParams();
+
+  const findVoluntariado = db.coders.filter(
+    (experiencias) => experiencias.voluntariado == vol
+  );
+
   return (
     <>
       <Filtro />
-      <StyledContainer style={{ paddingTop: "8rem" }}>
+      <StyledContainer style={{ paddingTop: "4rem" }}>
         <Grid container spacing={10}>
-          {data.map((cod, index) => (
+          {findVoluntariado.map((cod, index) => (
             <Grid key={index} item xs={12} sm={6} md={4}>
               <Link to={`/cartas/${cod.id}`} style={{ textDecoration: "none" }}>
                 {" "}
@@ -44,14 +52,12 @@ function Catalogo({ data }) {
                       {" "}
                       {cod.nombre} {cod.apellido}{" "}
                     </Typography>
-                    <Stack direction="row" spacing={1}>
-          
-                    </Stack>
+                    <Stack direction="row" spacing={1}></Stack>
                     <CardActions style={{ justifyContent: "space-between" }}>
                       <Typography
                         style={{
                           fontSize: "0.9rem",
-                          color: "black",
+                          color: "#284885",
                           fontWeight: "bold",
                         }}
                       >
@@ -100,4 +106,4 @@ function Catalogo({ data }) {
     </>
   );
 }
-export default Catalogo;
+export default CatalogoVoluntariado;
