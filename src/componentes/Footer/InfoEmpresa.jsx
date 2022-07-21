@@ -67,7 +67,7 @@ function InfoEmpresa() {
             <Box sx={{width:"100vw", height:"13vw", display:"flex", flexDirection:"row", justifyContent:"center", gap:"3vh", marginTop:"2vh"}}>
                     <StyledTextCard>
                         <SubTypography gutterBottom variant="caption" component="div">Sobre nosotros</SubTypography>
-                        <Parrafo> Somos una empresa dedicada a poner a disposicion de las empresas a los mejores desarrolladores</Parrafo>
+                        <Parrafo> En CoderMarket nos dedicamos a poner a disposicion de las empresas a los mejores desarrolladores</Parrafo>
                         <Parrafo>Nuestra plataforma tiene la finalidad de facilitar la busqueda y filtrado de candidatos a las empresas segun el perfil deseado. Además, muchos de nuestros coders se ofrecen como voluntarios para participar de manera solidaria en proyectos que lo necesiten.</Parrafo>
                         <Parrafo> ¡No te lo pierdas! </Parrafo>
                         <CardActions>
