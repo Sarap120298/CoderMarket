@@ -17,6 +17,7 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import db from '../../db.json';
+import group1 from '../../componentes/imagenes/logo.png';
 
 
 
@@ -30,6 +31,7 @@ const handleSubmit = (event) => {
 };
 const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: "#FFFAFA",
+ height: "96vh",
   [theme.breakpoints.down('sm')]: {
     display: "flex",
     flexDirection: "column",
@@ -39,10 +41,27 @@ const StyledBox = styled(Box)(({ theme }) => ({
   
 }))
 
+const TextfieldColor = styled(TextField)(({ theme }) => ({
+
+  '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#284885', 
+      },
+      '&.Mui-focused fieldset': {
+              borderColor: '#284885',
+      },
+      '&:hover fieldset': {
+              borderColor: '#284885',
+      },
+  
+  }
+}))
+
+
 const StyledButton = styled(Button)(({ theme }) => ({
     color: 'white',
     fontSize:'1.4rem',
-    backgroundColor: '#DE541E',
+    backgroundColor: '#284885',
     '&:hover': {
       backgroundColor: '#D4EAC8',
         },
@@ -80,10 +99,11 @@ const ContactCoder = () => {
       <StyledBox  key={index}>
 
         <Box sx={{ marginRight: "auto" , display:'flex'}}>
-          <Link to="/">
-            <img src={logo1} alt="logo" sx={{ width: 100, height: 100 }} />
-            </Link>
-            <Typography variant='h1' style={{marginTop:'10rem', color:"#4b7f55", fontWeight:'bold', fontSize:'2.8rem'}} >Formulario de reserva</Typography>
+         
+        <Box sx={{  }}><Link to='/'>
+            <img style={{ height: '4rem', marginLeft: '1.2rem', marginTop: '1.4rem' }} src={group1} alt='logo' /> </Link>
+          </Box>
+            <Typography variant='h1' style={{marginTop:'10rem', color:"#284885", fontWeight:'bold', fontSize:'2.8rem'}} >Formulario de contacto</Typography>
           
         </Box>
       <Box sx={{ width:'100vw', display:'flex', justifyContent:"center", }}>
@@ -104,79 +124,48 @@ const ContactCoder = () => {
             sx={{ mt: 1 }}
           >
             <Box style={{display:'flex',}}>
-            <TextField
-              style={{ color: "#4b7f55" }}
+            <TextfieldColor
+              style={{ color: "#284885" }}
               margin="normal"
               required
               fullWidth
               id="email"
-              label="Nombre"
+              label="Nombre y Apellido"
               name="email"
               autoComplete="email"
               autoFocus
-              color="success"
+
               
             />
-               <TextField
-              style={{ color: "#4b7f55", marginLeft:'2rem' }}
+               <TextfieldColor
+              style={{ color: "#284885", marginLeft:'2rem' }}
               margin="normal"
               required
               fullWidth
               id="email"
-              label="Apellidos"
-              name="email"
-              autoComplete="email"
+              label="Empresa"
+              name="Empresa"
+              autoComplete="Empresa"
               autoFocus
-              color="success"
+            
             />
             </Box>
-            <TextField
-              style={{ color: "#4b7f55" }}
+            <TextfieldColor
+              style={{ color: "#284885" }}
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Dirección"
-              name="email"
-              autoComplete="email"
+              id="Mensaje"
+              label="Mensaje"
+              name="Mensaje"
+              autoComplete="Mensaje"
               autoFocus
-              color="success"
+              rows={8}
+              multiline
+              
             />
-             <Box style={{display:'flex',}}>
-            <TextField
-              style={{ color: "#4b7f55" }}
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Nombre"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              color="success"
-            />
-               <TextField
-              style={{ color: "#4b7f55",  marginLeft:'2rem' }}
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Apellidos"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              color="success"
-            />
-            </Box>
-            <TextField
-        type="date"
-        margin="normal"
-        label="Start date"
-
-        defaultValue="2019-05-24"
-        inputProps={{ min: "2019-01-24", max: "2020-05-31" }}
-      />
-
+             
+    
             <Grid container>
               <Grid item xs sx={{ display: "flex", alignItems: "center" }}>
                 
@@ -185,36 +174,24 @@ const ContactCoder = () => {
           </Box>
         </Box>
               </Container>
-              <Box sx={{ border: 2, fontWeight: 'bold', marginRight:'12rem',  marginBottom:'12rem' }} style={{paddingLeft:'1rem',paddingRight:'1rem', textAlign:'center', borderColor:'#4b7f55',height: '80vh', width:'28rem',  marginLeft:'2rem', color:'#4b7f55', display:'flex', flexDirection:'column', justifyContent:'space-evenly', alignItems:'center' }}>
-            <Typography  sx={{ fontWeight: 'bold', fontSize:'1.4rem',  marginTop:'1rem' }} variant="body1" >250€ </Typography>
-            <Typography  sx={{ fontWeight: 'bold', fontSize:'1rem',  marginTop:'1rem' }} variant="body1" >Experiencia reservada: </Typography>
-            <Typography  sx={{ fontWeight: 'bold', fontSize:'1rem',  marginTop:'1rem' }} variant="body1" > {exp.apellido}</Typography>
+              <Box sx={{ border: 2, fontWeight: 'bold', marginRight:'12rem',  marginBottom:'12rem' }} style={{paddingLeft:'1rem',paddingRight:'1rem', textAlign:'center', borderColor:'#284885',height: '40vh', width:'28rem',  marginLeft:'2rem', color:'#284885', display:'flex', flexDirection:'column', justifyContent:'space-evenly', alignItems:'center' }}>
+            <Typography  sx={{ fontWeight: 'bold', fontSize:'1.4rem',  marginTop:'1rem' }} variant="body1" >{exp.nombre} {exp.apellido} </Typography>
+        
 
-
-
-            <Box sx={{display:'flex', alignItems:'center', justifyContent:'center',}}>
-                <Typography sx={{  fontSize:'1.2rem',  }} variant="body1" >Cantidad: 1</Typography>
+            <Button
+              style={{ backgroundColor: "#284885" }}
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+                  Contactar
+                  </Button>
                
-            </Box>
-            <StyledButton variant="text" color="primary">
-                  Pagar
-                </StyledButton>
-                <Typography  sx={{ fontWeight: 'bold', fontSize:'1rem',  marginTop:'1rem' }} variant="body1" >Garantías Econotravel: </Typography>
-          <Box style={{display:'flex'}} >
-          <CheckBoxIcon/>
-          <Typography variant="body1" style={{fontSize:'0.8rem'}}>99% de clientes satisfechos</Typography>
-          </Box>
-          <Box style={{display:'flex'}} >
-          <CheckBoxIcon/>
-          <Typography variant="body1" style={{fontSize:'0.8rem'}}>Colaboradores de Calidad</Typography>
-          </Box>
-          <Box style={{display:'flex'}} >
-          <CheckBoxIcon/>
-          <Typography variant="body1" style={{fontSize:'0.8rem'}} >Pago 100% seguro</Typography>
-          </Box>
         </Box>
               </Box>
               </StyledBox>
+
         ))}
     </>
   );
