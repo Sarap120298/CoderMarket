@@ -13,8 +13,8 @@ function Filtro() {
     <>
       <Box style={{marginTop:'10rem', display:'flex', justifyContent:'center'}}>
         <DropdownUbicacion />
-        <DropdownTransporte />
-        <DropdownDuracion/> 
+        {/* <DropdownTransporte />
+        <DropdownDuracion/>  */}
       </Box>
   
     </>

@@ -30,7 +30,7 @@ function Catalogo({ data }) {
 
   return (
         <>
-      {/* < Filtro/> */}
+      < Filtro/>
       <StyledContainer style={{paddingTop:'14rem'}}>
      
                    
