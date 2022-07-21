@@ -28,7 +28,6 @@ const Search = styled('div')(({ theme }) => ({
   },
 }));
 
-
 const StyledIcon = styled(PersonIcon)(({ theme }) => ({
   marginBottom: '0.7rem',
   marginTop: '0.5rem',

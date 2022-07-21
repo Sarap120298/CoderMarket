@@ -5,7 +5,7 @@ import FooterNavMenu from './FooterNavMenu.jsx';
 
 
 const StyledFooter = styled(AppBar)(({ theme }) => ({
-  backgroundColor: '#729EBD',
+  backgroundColor: '#FFFAFA',
   boxShadow: "none",
   top: 'auto', 
   bottom: 0,
@@ -14,7 +14,7 @@ const StyledFooter = styled(AppBar)(({ theme }) => ({
 
 const Footer = () => {
     return ( 
-        <StyledFooter position="static">
+        <StyledFooter position="static2">
           <Toolbar >
             <FooterNavMenu />
           </Toolbar>

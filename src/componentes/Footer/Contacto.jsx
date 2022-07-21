@@ -11,13 +11,14 @@ const BoxContacto= styled(Box)(({theme}) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
     alignItems:'center',
-    backgroundColor: '#DE541E',
-    color:'#FFFAFA',
+    backgroundColor: 'white',
+    color:'#284885',
     width: '60vw',
     height: '60vh',
     borderRadius: '10px',
-    boxShadow: '0 5px 5px rgba(0, 0, 0, 0.2)',
+    boxShadow: '0 4px 4px rgba(0, 0, 0, 0.25)',
     marginTop: '5rem',
+    fontWeight: "bolder",
    
     
   }));
@@ -59,7 +60,7 @@ const Contact = () => {
                         flexWrap: 'wrap',
                 }}>
                     <Typography variant='body'>Teléfono: 93 123 45 67</Typography>
-                    <Typography variant='body' >Correo: info@econotravel.com</Typography>
+                    <Typography variant='body' >Correo: info@codermarket.com</Typography>
                     <Typography variant='body' >Dirección: Avda. Bogatell 82, 08005 Barcelona</Typography>
 
                 </Box>
